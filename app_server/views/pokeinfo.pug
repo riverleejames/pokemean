@@ -1,0 +1,67 @@
+//- pokeinfo.pug
+//- River James T00202161
+extends layout
+block content
+  .container.py-4.py-xl-5
+    .row.row-cols-1.row-cols-md-2
+      .col.d-flex.align-items-center
+        img.img-fluid(src=image)
+      .col.d-flex.p-4.mt-4.align-items-center
+        .row
+          if id < 10
+            h1.display-5.text-muted #00#{id}
+          else if id < 100
+            h1.display-5.text-muted #0#{id}
+          else
+            h1.display-5.text-muted ##{id}     
+          h1.display-1.text-capitalize.fw-bold #{name}
+          p.lead  #{text}
+          .row.mt-5.d-flex.align-items-center
+            .col
+              h4.text-center Type
+               p.lead #{type.map((x) => x.charAt(0).toUpperCase() + x.slice(1)).join(' and ')}
+            .col
+              h4.text-center Height
+               p.lead #{height/10}m
+            .col
+              h4.text-center Weight
+               p.lead #{weight}kg
+
+  
+        
+
+  .container.py-4.py-xl-5
+    .row.gy-4.row-cols-3.row-cols-md-6
+      each stat in stats
+        .col.d-flex.align-items-center
+          .text-center.d-flex.flex-column.justify-content-center.align-items-center.py-3
+            if stat.name == "hp"
+              img.img-fluid(src=icons[0].icon width="70px")
+            else if stat.name == "attack"
+              img.img-fluid(src=icons[1].icon width="70px")
+            else if stat.name == "defense"
+              img.img-fluid(src=icons[2].icon width="70px")
+            else if stat.name == "special-attack"
+              img.img-fluid(src=icons[3].icon width="70px")
+            else if stat.name == "special-defense"
+              img.img-fluid(src=icons[4].icon width="70px")
+            else if stat.name == "speed"
+              img.img-fluid(src=icons[5].icon width="70px")
+            .px-3
+              h2.fw-bold.mb-0 #{stat.value}
+              p.mb-0.text-capitalize #{stat.name}
+
+  .container.py-4.py-xl-5
+    .row.gy-4.row-cols-2
+      .col.d-flex.align-items-center
+        //- if id is 1 disable the previous button
+        if id == 1
+          a.btn.btn-success.btn-lg.col-12.disabled(href=`/pokeinfo/${id-1}`) #{buttons[1].btnPrev}
+        else
+          a.btn.btn-success.btn-lg.col-12(href=`/pokeinfo/${id-1}`) #{buttons[1].btnPrev}
+      .col.d-flex.align-items-center
+        if id == 905
+          a.btn.btn-danger.btn-lg.col-12.disabled(href=`/pokeinfo/${id+1}`) #{buttons[0].btnNext}
+        else
+          a.btn.btn-danger.btn-lg.col-12(href=`/pokeinfo/${id+1}`) #{buttons[0].btnNext}
+  

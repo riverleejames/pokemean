@@ -1,0 +1,39 @@
+//- layout.pug 
+//- River James T00202161
+doctype html
+meta(charset="utf-8")
+meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no")
+title Pokémean
+link(rel="stylesheet" href="../stylesheets/bootstrap.min.css")
+link(rel="stylesheet" href="../stylesheets/Navbar-Right-Links-Dark-icons.css")
+script(src="https://kit.fontawesome.com/0146ab5640.js", crossorigin="anonymous")
+link(rel="icon" type="image/png" href="../images/icons/pokeball.png")
+nav.navbar.navbar-dark.navbar-expand-md.bg-dark.py-3
+  .container
+    a.navbar-brand.d-flex.align-items-center(href="/pokemon")
+      span.bs-icon-sm.bs-icon-rounded.d-flex.justify-content-center.align-items-center.me-2.bs-icon
+        img.img-fluid(src="../images/icons/pokeball.png")
+      span Pokémean
+    button.navbar-toggler(data-bs-toggle="collapse" data-bs-target="#navcol-5")
+      span.visually-hidden Toggle navigation
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navcol-5
+      ul.navbar-nav.ms-auto
+        li.nav-item
+          a.nav-link(href="/pokemon") Home
+        li.nav-item
+          a.nav-link(href="/about") About
+        li.nav-item
+          a.btn.btn-success.ms-md-2(role="button" href="/login") Login
+      a.btn.btn-danger.ms-md-2(role="button" href="/register") Register
+block content
+footer.text-center.bg-dark
+  .container.text-white.py-4.py-lg-5
+    ul.list-inline
+      li.list-inline-item.me-4
+        a.link-light(href="#")
+      li.list-inline-item.me-4
+      li.list-inline-item
+    p.text-muted.mb-0 Copyright © 2022 Pokémean
+  script(src="../javascripts/jquery.min.js")
+

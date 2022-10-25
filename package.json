@@ -1,0 +1,42 @@
+{
+  "name": "pokemean",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "body-parser": "^1.20.0",
+    "bootstrap": "^5.2.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "express": "~4.16.1",
+    "font-awesome": "^4.7.0",
+    "http-errors": "~1.6.3",
+    "jade-bootstrap": "^1.0.14",
+    "jquery": "^3.6.1",
+    "mongoose": "^6.6.2",
+    "mongosh": "^1.6.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2",
+    "request": "^2.88.2"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riverleejames/pokemean.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riverleejames/pokemean/issues"
+  },
+  "homepage": "https://github.com/riverleejames/pokemean#readme",
+  "description": ""
+}

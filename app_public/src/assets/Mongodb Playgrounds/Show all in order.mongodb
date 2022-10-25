@@ -1,0 +1,20 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// The current database to use.
+use('pokedb');
+
+// The current collection to use.
+db.pokedb = db.getCollection('pokedex');
+
+// display all collections
+db.getCollectionNames();
+
+// display 50 documents in a collection ordered by id showing only the name and id show all documents
+db.pokedb.find({}, {name: 1, id: 1}).sort({id: 1}).limit(10);
+
+
+
+
+
+
