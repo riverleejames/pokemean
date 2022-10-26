@@ -8,7 +8,7 @@ const ctrlOthers = require('../controllers/others');
 
 
 /* GET home page. */
-router.get('/pokemon/', ctrlPokemon.homelist); 
+router.get('/', ctrlPokemon.homelist); 
 
 
 /* Pokemon Pages */
