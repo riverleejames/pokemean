@@ -18,7 +18,7 @@ router.get('/pokeinfo/:pokemonid', ctrlPokemon.pokemonInfo);
 router.get('/login', ctrlLogin.login);
 
 /* Register Pages */
-router.post('/register', ctrlRegister.register);
+router.get('/register', ctrlRegister.register);
 
 
 /* Other pages */
