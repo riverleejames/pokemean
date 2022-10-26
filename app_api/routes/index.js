@@ -6,7 +6,7 @@ const ctrlRegister = require('../controllers/users.js');
 //const ctrlOthers = require('../controllers/others');
 // locations
 router
-  .route('/')
+  .route('/pokemon')
   .get(ctrlPokemon.pokemonList);
 router
   .route('/pokeinfo/:pokemonid')
