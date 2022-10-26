@@ -3,7 +3,7 @@ const apiOptions = {
     server: 'http://localhost:3000'
 };
 if (process.env.NODE_ENV === 'production') {
-    apiOptions.server = 'https://vast-citadel-50477.herokuapp.com/pokemon';
+    apiOptions.server = 'https://vast-citadel-50477.herokuapp.com';
 }
 
 /* GET 'Login' page */
