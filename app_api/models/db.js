@@ -1,5 +1,4 @@
-var dotenv = require('dotenv');
-dotenv.config();
+
 const MONGOURL = process.env.uri;
 const mongoose = require('mongoose');
 const { MongoClient, ServerApiVersion } = require('mongodb');
