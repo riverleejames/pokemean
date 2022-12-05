@@ -16,7 +16,7 @@ export class PokemonDataService {
     private http: HttpClient,
   ) { }
 
-  private apiBaseUrl = (process.env['NODE_ENV'] === 'production') ? 'https://https://vast-citadel-50477.herokuapp.com/' : 'http://localhost:3000/';
+  private apiBaseUrl = 'https://vast-citadel-50477.herokuapp.com/';
 
 
   public getAllPokemon() {
