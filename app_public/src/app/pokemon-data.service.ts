@@ -16,7 +16,11 @@ export class PokemonDataService {
     private http: HttpClient,
   ) { }
 
-  private apiBaseUrl = 'https://vast-citadel-50477.herokuapp.com/api';
+ // private apiBaseUrl = 'https://vast-citadel-50477.herokuapp.com/api';
+
+  private apiBaseUrl = 'http://localhost:3000/api';
+
+
 
 
   public getAllPokemon() {
