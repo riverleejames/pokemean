@@ -33,14 +33,13 @@ process.once('SIGUSR2', function () {
     });
 });
 
-// //For app termination
-// commented out because I'm not using Windows. 
-// process.on('SIGINT', function () {
-//     gracefulShutdown('app termination', function () {
-//         process.exit(0);
-//     });
-// }
-// );
+//For app termination
+process.on('SIGINT', function () {
+    gracefulShutdown('app termination', function () {
+        process.exit(0);
+    });
+}
+);
 
 
 //For Heroku app termination
