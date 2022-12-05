@@ -10,7 +10,7 @@ script(src="https://kit.fontawesome.com/0146ab5640.js", crossorigin="anonymous")
 link(rel="icon" type="image/png" href="../images/icons/pokeball.png")
 nav.navbar.navbar-dark.navbar-expand-md.bg-dark.py-3
   .container
-    a.navbar-brand.d-flex.align-items-center(href="/pokemon")
+    a.navbar-brand.d-flex.align-items-center(href="/")
       span.bs-icon-sm.bs-icon-rounded.d-flex.justify-content-center.align-items-center.me-2.bs-icon
         img.img-fluid(src="../images/icons/pokeball.png")
       span Pokémean
@@ -35,5 +35,6 @@ footer.text-center.bg-dark
       li.list-inline-item.me-4
       li.list-inline-item
     p.text-muted.mb-0 Copyright © 2022 Pokémean
-  script(src="../javascripts/jquery.min.js")
+    script(src="/javascripts/jquery.min.js")
+  block scripts
 

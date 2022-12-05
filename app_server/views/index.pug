@@ -3,21 +3,13 @@
 extends layout 
 block content
   .row.m-3
-    each pokemon in pokeinfo
-      .col-lg-3.col-md-6.mb-4.mt-4.d-flex
-        .card.text-center
-          if pokemon.id < 10
-            p.lead.text-muted.card-title #00#{pokemon.id}
-          else if pokemon.id < 100
-            p.lead.text-muted.card-title #0#{pokemon.id}
-          else
-            p.lead.text-muted.card-title ##{pokemon.id}
-          img.card-img-top.mt-3.p-4(src=pokemon.image, alt=pokemon.name)
-          .card-body.d-flex.flex-column
-            h5.card-title.text-capitalize #{pokemon.name}
-            p.card-text #{pokemon.flavor_text}
-            a.btn.mt-auto.btn-success(href=`/pokeinfo/${pokemon.id}`) #{buttons[0].buttonText}
+    app-home-list
     
     
     a.btn.btn-light.btn-sm.fixed-bottom(href="#") Back to top
+block scripts
+  script(src="/build/polyfills.08311ba087efcd85.js")
+  script(src="/build/main.309a352b19f894d5.js")
+  script(src="/build/runtime.46ec18423d982f02.js")
+
     

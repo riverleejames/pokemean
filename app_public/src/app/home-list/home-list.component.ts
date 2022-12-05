@@ -1,13 +1,7 @@
+//POKEMON
 import { Component, OnInit } from '@angular/core';
 import { PokemonDataService } from '../pokemon-data.service';
-
-export class Pokemon {
-  id!: number;
-  name!: string;
-  type!: string;
-  image!: string;
-  flavor_text!: string;
-}
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-home-list',
@@ -15,26 +9,40 @@ export class Pokemon {
   styleUrls: ['./home-list.component.css']
 })
 
-export class HomeListComponent implements OnInit {
+export class PokemonListComponent implements OnInit {
+  
+  constructor(
+    private pokemonDataService: PokemonDataService
+    ) { }
 
-  constructor(private PokemonDataService: PokemonDataService) { }
+    public pokemon: Pokemon[] = [];
+    public message: string;
 
-  public pokemon: Pokemon[];
 
-  private getAllPokemon(): void {
-    this.PokemonDataService
-      .getAllPokemon()
-      .then((pokemon: Pokemon[]) => {
-        this.pokemon = pokemon.map((pokemon: Pokemon) => {
-          return pokemon;
-        });
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
-  }
+    ngOnInit() {
+      this.getAllPokemon();
+    }
 
-  ngOnInit(): void {
-  }
+    private getAllPokemon(): void {
+      this.message = 'Gettig all pokemon...';
+      this.pokemonDataService
+        .getAllPokemon()
+        .then((pokemon: Pokemon[]) => (this.pokemon = pokemon))
+        .catch((error: Error) => console.log(error));
+    }
 
+    public getPokemonById(pokemonId: number): void {
+      this.pokemonDataService
+        .getPokemonById(pokemonId)
+        .then((pokemon: Pokemon) => console.log(pokemon))
+        .catch((error: Error) => console.log(error));
+    }
+
+    private showError(error: any): void {
+      this.message = error.message;
+    }
+  
+
+
+  
 }

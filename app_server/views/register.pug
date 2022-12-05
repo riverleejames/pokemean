@@ -17,13 +17,11 @@ block content
               img.img-fluid(src="../images/icons/pokeball.png")
             form.text-center(method="post")
               .mb-3
-                input.form-control(type="text", name="firstName", placeholder="First Name")
+                input.form-control(type="text" name="name" id="name" placeholder="Name" )
               .mb-3
-                input.form-control(type="text", name="lastName", placeholder="Last Name")
+                input.form-control(type="email" name="email" id="email" placeholder="Email")
               .mb-3
-                input.form-control(type="email", name="email", placeholder="Email")
-              .mb-3
-                input.form-control(type="password", name="password", placeholder="Password")
+                input.form-control(type="password" name="password" id="password" placeholder="Password")
               .mb-3
                 button.btn.btn-danger.d-block.w-100(type="submit") #{title}
               a(href="/login") #{haveAccount}
