@@ -6,7 +6,7 @@ meta(name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=n
 title Pokémean
 link(rel="stylesheet" href="../stylesheets/bootstrap.min.css")
 link(rel="stylesheet" href="../stylesheets/Navbar-Right-Links-Dark-icons.css")
-script(src="https://kit.fontawesome.com/0146ab5640.js", crossorigin="anonymous")
+script(src="https://kit.fontawesome.com/0146ab5640.js" crossorigin="anonymous")
 link(rel="icon" type="image/png" href="../images/icons/pokeball.png")
 nav.navbar.navbar-dark.navbar-expand-md.bg-dark.py-3
   .container
@@ -19,13 +19,20 @@ nav.navbar.navbar-dark.navbar-expand-md.bg-dark.py-3
       span.navbar-toggler-icon
     .collapse.navbar-collapse#navcol-5
       ul.navbar-nav.ms-auto
-        li.nav-item
-          a.nav-link(href="/") Home
-        li.nav-item
-          a.nav-link(href="/about") About
-        li.nav-item
-          a.btn.btn-success.ms-md-2(role="button" href="/login") Login
-      a.btn.btn-danger.ms-md-2(role="button" href="/register") Register
+        if user
+          li.nav-item
+            a.nav-link() #{user.username}
+          li.nav-item
+            a.nav-link(href="/") Home
+          li.nav-item
+            a.nav-link(href="/about") About
+        if user
+          li.nav-item
+            a.btn.btn-danger.ms-md-2(role="button" href="/logout") Logout
+        if !user
+          li.nav-item
+            a.btn.btn-success.ms-md-2(role="button" href="/login") Login
+            a.btn.btn-danger.ms-md-2(role="button" href="/register") Register
 block content
 footer.text-center.bg-dark
   .container.text-white.py-4.py-lg-5

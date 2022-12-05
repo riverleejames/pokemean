@@ -2,6 +2,7 @@
 /* GET 'About' page */
 const about = function (req, res) {
     res.render('about', {
+        user : req.username,
         items: [
             {
                 heading: 'About',

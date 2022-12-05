@@ -1,4 +1,4 @@
-var dotenv = require('dotenv');
+const dotenv = require('dotenv');
 dotenv.config();
 const MONGOURL = process.env.MONGODB_URI;
 const mongoose = require('mongoose');
@@ -54,3 +54,4 @@ process.on('SIGTERM', function () {
 // BRING IN YOUR SCHEMAS & MODELS
 require('./pokemon');
 require('./users');
+require('./account');

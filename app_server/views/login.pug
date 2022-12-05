@@ -15,11 +15,11 @@ block content
           .card-body.d-flex.flex-column.align-items-center
             .bs-icon-xl.bs-icon-circle.bs-icon-primary.bs-icon.my-4
               img.img-fluid(src="../images/icons/pokeball.png")
-            form.text-center(method="post")
+            form.text-center(method="post" role="form" action="/login")
               .mb-3
-                input.form-control(type="email", name="email", placeholder="Email")
+                input.form-control(type="email" name="username" id="username" placeholder="Email")
               .mb-3
-                input.form-control(type="password", name="password", placeholder="Password")
+                input.form-control(type="password" name="password" id="password" placeholder="Password")
               .mb-3
                 button.btn.btn-danger.d-block.w-100(type="submit") #{title}
               a(href="/register") #{haveAccount}

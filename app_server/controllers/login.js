@@ -9,6 +9,7 @@ if (process.env.NODE_ENV === 'production') {
 /* GET 'Login' page */
 const login = function (req, res) {
     res.render('login', {
+        user : req.username,
         title: 'Login',
         loginText: 'Please enter your username and password to login.',
         image: '/img/pokeball.png',
@@ -17,34 +18,8 @@ const login = function (req, res) {
 
 };
 
-
-//post information from login form and check if user exists in mongodb
-const doLogin = (req, res) => {
-    const path = '/api/login';
-    const data = {
-        email: req.body.email,
-        password: req.body.password
-    };
-    const requestOptions = {
-        url: apiOptions.server + path,
-        method: 'GET',
-        json: data
-    };
-    request(
-        requestOptions,
-        (err, {statusCode}, body) => {
-            if (statusCode === 200) {
-                res.redirect('/pokemon');
-            } else {
-                res.redirect('/login');
-            }
-        }
-    );
-}
-
 module.exports = {
-    login,
-    doLogin
+    login
 };
 
 

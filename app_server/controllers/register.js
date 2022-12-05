@@ -9,6 +9,7 @@ if (process.env.NODE_ENV === 'production') {
 /* GET 'Register' page */
 const register = function (req, res) {
     res.render('register', {
+        user : req.username,
         title: 'Register',
         registerText: 'Please enter your username and password to register.',
         image: '/img/pokeball.png',
@@ -17,38 +18,8 @@ const register = function (req, res) {
     });
 };
 
-//post information from register form and check if user exists in mongodb
-const doRegister = (req, res) => {
-    const path = '/api/register';
-    const data = {
-        email: req.body.email,
-        password: req.body.password
-    };
-    const requestOptions = {
-        url: apiOptions.server + path,
-        method: 'POST',
-        json: data
-    };
-    request(
-        requestOptions,
-        (err, {statusCode}, body) => {
-            if (statusCode === 200) {
-                res.redirect('/pokemon');
-            } else {
-                res.redirect('/register');
-            }
-        }
-    );
-}
-
-
-
-
-
-
 
 module.exports = {
-    register,
-    doRegister
+    register
 };
 
